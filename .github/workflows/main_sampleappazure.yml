@@ -68,7 +68,7 @@ jobs:
     steps:
       - name: Azure Login
         run: |
-          Write-Output "Logging into Azure"
+          echo "Logging into Azure"
           az login
       
       - name: Azure subscription
