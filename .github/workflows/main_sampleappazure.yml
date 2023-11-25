@@ -78,4 +78,6 @@ jobs:
       - name: Run Azure Cost CLI
         run: azure-cost accumulatedCost -o markdown --subscription "127dc4a3-b8cf-4f8e-92cb-18c0013b147c" >> $GITHUB_STEP_SUMMARY
 
+      - name: further cost analysis
+        run: azure-cost dailyCosts -s "127dc4a3-b8cf-4f8e-92cb-18c0013b147c" --dimension msdocs-core-sql-tutorial -o csv >> $GITHUB_STEP_SUMMARY
           
