@@ -67,14 +67,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Azure Login
-        uses: azure/login@v1
-        with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
+        run: az login
+      
+      - name: Azure subscription
+        run: az account set -s "127dc4a3-b8cf-4f8e-92cb-18c0013b147c"
 
       - name: Install Azure Cost CLI
         run: dotnet tool install -g azure-cost-cli
 
       - name: Run Azure Cost CLI
-        run: azure-cost accumulatedCost -o markdown --subscription ${{ github.event.inputs.az-subscription-id }} >> $GITHUB_STEP_SUMMARY
+        run: azure-cost accumulatedCost -o markdown --subscription "127dc4a3-b8cf-4f8e-92cb-18c0013b147c" >> $GITHUB_STEP_SUMMARY
 
           
