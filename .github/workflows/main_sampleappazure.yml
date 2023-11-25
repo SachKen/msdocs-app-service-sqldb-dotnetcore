@@ -68,7 +68,7 @@ jobs:
     steps:
       - name: Azure Login
         run: |
-            - echo 'run login'
+            - echo "run login"
             - az login
       
       - name: Azure subscription
