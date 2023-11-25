@@ -67,9 +67,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Azure Login
-        run: |
-            echo "Logging into Azure"
-            az login
+        run: az login --username "sk01545@surrey.ac.uk" --password "RemoOlympicAurum!"
       
       - name: Azure subscription
         run: az account set -s "127dc4a3-b8cf-4f8e-92cb-18c0013b147c"
