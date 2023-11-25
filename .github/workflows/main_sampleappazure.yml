@@ -68,7 +68,7 @@ jobs:
     steps:
       - name: Azure Login
         run: |
-          WRITE-OUTPUT "Logging into Azure" >> $GITHUB_OUTPUT
+          echo "Logging into Azure" >> $GITHUB_OUTPUT
           az login
       
       - name: Azure subscription
