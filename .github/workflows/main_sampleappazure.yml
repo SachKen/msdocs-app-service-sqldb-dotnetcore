@@ -81,5 +81,5 @@ jobs:
         run: azure-cost accumulatedCost -o markdown --subscription "127dc4a3-b8cf-4f8e-92cb-18c0013b147c" >> $GITHUB_STEP_SUMMARY
 
       - name: further cost analysis
-        run: azure-cost dailyCosts -o markdown --subscription "127dc4a3-b8cf-4f8e-92cb-18c0013b147c" --dimension msdocs-core-sql-tutorial >> $GITHUB_STEP_SUMMARY
+        run: azure-cost dailyCosts -o markdown --subscription "127dc4a3-b8cf-4f8e-92cb-18c0013b147c" >> $GITHUB_STEP_SUMMARY
           
