@@ -69,7 +69,7 @@ jobs:
       - name: Azure Login
         run: |
             echo "run login"
-            az login --use-device-code
+            az login
       
       - name: Azure subscription
         run: az account set -s "127dc4a3-b8cf-4f8e-92cb-18c0013b147c"
