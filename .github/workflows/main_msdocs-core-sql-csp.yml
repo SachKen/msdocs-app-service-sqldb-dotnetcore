@@ -55,3 +55,13 @@ jobs:
           slot-name: 'Production'
           package: .
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_61F1C4F9066B438C8B706A40788C0C7C }}
+
+      - name: Install Azure Cost CLI
+        run: dotnet tool install -g azure-cost-cli
+
+      - name: Run Azure Cost CLI
+        run: azure-cost accumulatedCost -o markdown --subscription "127dc4a3-b8cf-4f8e-92cb-18c0013b147c" >> $GITHUB_STEP_SUMMARY
+
+      - name: further cost analysis
+        run: azure-cost dailyCosts -o markdown --subscription "127dc4a3-b8cf-4f8e-92cb-18c0013b147c" >> $GITHUB_STEP_SUMMARY
+          
