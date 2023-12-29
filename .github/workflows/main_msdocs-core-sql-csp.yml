@@ -55,8 +55,11 @@ jobs:
           slot-name: 'Production'
           package: .
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_61F1C4F9066B438C8B706A40788C0C7C }}
+  
   cost-data:
     runs-on: ubuntu-latest
+    needs: build
+    
     steps:
       - name: Install Azure Cost CLI
         run: dotnet tool install -g azure-cost-cli
