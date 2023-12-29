@@ -59,13 +59,13 @@ jobs:
   cost-data:
     runs-on: ubuntu-latest
     needs: build
-    
+
     steps:
       - name: Install Azure Cost CLI
         run: dotnet tool install -g azure-cost-cli
 
-      - name: Run Azure Cost CLI
-        run: azure-cost accumulatedCost -o markdown --subscription "27976de0-2144-45b9-8fb7-a9c97ac462d1" >> $GITHUB_STEP_SUMMARY
+      #- name: Run Azure Cost CLI
+      #  run: azure-cost accumulatedCost -o markdown --subscription "27976de0-2144-45b9-8fb7-a9c97ac462d1" >> $GITHUB_STEP_SUMMARY
 
       - name: further cost analysis
         run: azure-cost dailyCosts -o markdown --subscription "27976de0-2144-45b9-8fb7-a9c97ac462d1" >> $GITHUB_STEP_SUMMARY
