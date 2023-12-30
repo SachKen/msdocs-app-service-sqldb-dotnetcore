@@ -61,7 +61,7 @@ jobs:
     needs: build
     steps:
       - name: Az Command
-        run: az account show
+        run: az login
 
       - name: Install Azure Cost CLI
         run: dotnet tool install -g azure-cost-cli
