@@ -59,7 +59,7 @@ jobs:
   cost-data:
     runs-on: ubuntu-latest
     needs: build
-
+    uses: azure/login@v1
     steps:
       - name: Azure login
         run: |
