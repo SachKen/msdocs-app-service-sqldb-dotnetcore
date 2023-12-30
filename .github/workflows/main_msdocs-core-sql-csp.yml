@@ -62,8 +62,8 @@ jobs:
 
     steps:
       - name: Azure login
-        run: az login
-        
+        run: az login >> $GITHUB_OUTPUT
+
       - name: Install Azure Cost CLI
         run: dotnet tool install -g azure-cost-cli
 
